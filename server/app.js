@@ -1,9 +1,9 @@
 const express = require('express')
 const mongoose = require('mongoose')
-//const cors=require('cors')
+const cors=require('cors')
 const studentRouter = require('./routes/students')
 
-const url='mongodb+srv://juturuchinmayee123:9381001124@merncrud.vrn1c.mongodb.net/?retryWrites=true&w=majority&appName=merncrud';
+const url='mongodb+srv://juturuchinmayee123:<password>@merncrud.vrn1c.mongodb.net/?retryWrites=true&w=majority&appName=merncrud';
 //const url = 'mongodb://127.0.0.1:27017/MGIT'
 //const url = 'mongodb://127.0.0.1:27020,127.0.0.1:27021,127.0.0.1:27022/cbitit1?replicaSet=m101';
 const app = express()
@@ -15,7 +15,7 @@ con.on('open', () =>
 {
 console.log('connected...')
 })
-//app.use(cors())
+app.use(cors())
 app.use(express.json())
 
 app.use('/students',studentRouter)
